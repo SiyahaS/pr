@@ -1,0 +1,27 @@
+<mat-toolbar>
+  <h3>{{username}}</h3>
+  <div style="flex: 1 1">
+  </div>
+  <button mat-button (click)="queue()">Queue</button>
+  <button mat-button (click)="approval()">Approvals</button>
+  <button mat-button (click)="blacklist()">Blacklist</button>
+  <button mat-button (click)="whitelist()">Whitelist</button>
+</mat-toolbar>
+<div fxLayout="row wrap" fxLayoutAlign="center start" style="margin: 8px;">
+  <mat-card style="width: 40%">
+    <h3>{{title}}</h3>
+    <mat-divider>
+    </mat-divider>
+    <mat-list>
+      <ng-container *ngFor="let song of songs; let index">
+        <mat-list-item *ngIf="!song.hidden">
+          <span class="mat-body-strong">{{song.title}}</span>
+          <div style="flex: 1 1"></div>
+          <button mat-icon-button *ngFor="let button of buttons">
+            <mat-icon (click)="button.click(song)">{{button.icon}}</mat-icon>
+          </button>
+        </mat-list-item>
+      </ng-container>
+    </mat-list>
+  </mat-card>
+</div>

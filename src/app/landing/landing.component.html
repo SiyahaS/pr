@@ -1,0 +1,16 @@
+<div fxLayout="column" fxLayoutAlign="start stretch" style="min-height: 100%; padding-left: 16px; padding-right: 16px;">
+  <div fxLayout="row" fxLayoutAlign="space-around end" style="padding-top: 200px">
+    <mat-card fxFlex="80%">
+      <mat-form-field style="width: 100%">
+        <input matInput placeholder="Radio Name" value="">
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+    </mat-card>
+  </div>
+  <div fxLayout="row wrap" fxLayoutAlign="start start" style="min-height: 60%">
+    <mat-card fxFlex="16%" *ngFor="let station of stations" style="margin: 8px 2%">
+      <h3 (click)="select(station)">{{station.title}}</h3>
+      <img [src]="station.image" alt="channel image" width="100%" (click)="select(station)">
+    </mat-card>
+  </div>
+</div>

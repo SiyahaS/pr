@@ -1,0 +1,29 @@
+<div fxLayout="column" fxLayoutAlign="space-around center" fxLayoutGap="16px" style="width:100%; padding-top: 16px;">
+  <mat-card fxLayout="column" fxLayoutAlign="space-around center">
+    <video #videoPlayer controls id="video-player" width="300px" height="300px">
+      <source src="{{environment.apiURL}}/api/v1/radios/{{this.streamId}}/live.mpd" type="application/dash+xml">
+    </video>
+    <img [src]="playing.image" alt="">
+    <span class="mat-body-strong">{{playing.title}}</span>
+    <div>
+      <button mat-icon-button (click)="play()">
+        <mat-icon>play_arrow</mat-icon>
+      </button>
+      <button mat-icon-button (click)="stop()">
+        <mat-icon>skip_next</mat-icon>
+      </button>
+      <button mat-icon-button (click)="quality()">
+        {{currentQuality}}
+      </button>
+    </div>
+  </mat-card>
+  <mat-card>
+    <h3>Queue</h3>
+    <mat-list>
+      <mat-list-item *ngFor="let song of songs">{{ song.title }}
+        <mat-divider>
+        </mat-divider>
+      </mat-list-item>
+    </mat-list>
+  </mat-card>
+</div>

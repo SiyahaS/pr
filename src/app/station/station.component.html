@@ -1,0 +1,17 @@
+<div fxLayout="column" fxLayoutAlign="start stretch" style="min-height: 100%; padding-left: 16px; padding-right: 16px;">
+  <div fxLayout="row" fxLayoutAlign="space-around end" style="padding-top: 200px">
+    <mat-card fxFlex="80%">
+      <form>
+        <mat-form-field style="width: 100%">
+          <input matInput placeholder="Search" value="" [formControl]="searchControl">
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+      </form>
+    </mat-card>
+  </div>
+  <div fxLayout="row wrap" fxLayoutAlign="start start" style="min-height: 60%">
+    <app-you-tube-media fxFlex="16%" style="margin: 8px 2%;" [media]="media" (mediaSelected)="requestMedia($event)"
+      *ngFor="let media of medias">
+    </app-you-tube-media>
+  </div>
+</div>

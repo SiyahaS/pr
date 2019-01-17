@@ -1,0 +1,11 @@
+<mat-card>
+  <a (click)="requestMedia();">
+    <h3>{{media.title}}</h3>
+  </a>
+  <div style="text-align: center; position: relative;">
+    <img [src]="media.image" alt="YouTube Media Image" width="100%">
+    <div style="position: absolute; bottom: 12px; right: 12px; background-color: rgba(131, 131, 131, 0.842); color: white; border-radius: 5px; padding: 4px 8px">
+      {{media.hours ? media.hours + ':' : ''}}{{media.minutes}}:{{media.seconds}}
+    </div>
+  </div>
+</mat-card>

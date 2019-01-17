@@ -1,0 +1,14 @@
+GET http://localhost:3000/radios/test_stream/time HTTP/1.1
+
+###
+
+POST http://localhost:3000/radios/test_stream HTTP/1.1
+Content-Type: application/json
+
+{
+    "url": "https://youtu.be/YJTae5ScvQA",
+    "uri": "YJTae5ScvQA"
+}
+
+###
+GET http://localhost:8080/radios/test HTTP/1.1
